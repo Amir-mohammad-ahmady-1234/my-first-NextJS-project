@@ -162,14 +162,3 @@ a.secondary {
     filter: invert();
   }
 }
-
-.h1 {
-  color: red;
-}
-
-.main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

@@ -40,3 +40,15 @@ a {
     color-scheme: dark;
   }
 }
+
+h1 {
+  color: red;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
