@@ -34,7 +34,7 @@ export default function RootLayout({
             ></path>
           </svg>
         </div>
-
+        HEADER
         {children}
       </body>
     </html>

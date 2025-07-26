@@ -1,4 +1,4 @@
-const page = () => {
+const CommunityPage = () => {
   return (
     <div
       style={{
@@ -10,4 +10,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CommunityPage;
