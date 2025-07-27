@@ -6,8 +6,8 @@ import MealsGrid from "@/components/meals/meals-grid";
 const MealsPage = () => {
   return (
     <>
-      <header>
-        <h1 className={classes.header}>
+      <header className={classes.header}>
+        <h1>
           Delicious meals, created{" "}
           <span className={classes.highlight}>by you</span>
         </h1>
