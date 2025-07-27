@@ -2,8 +2,13 @@ import Link from "next/link";
 
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
+import { getMeals } from "@/lib/meals";
+import { MealType } from "@/types/mealType";
 
-const MealsPage = () => {
+const MealsPage = async () => {
+  const data = await getMeals();
+  const meals = data as MealType[];
+
   return (
     <>
       <header className={classes.header}>
@@ -19,7 +24,7 @@ const MealsPage = () => {
         </p>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
       </main>
     </>
   );
