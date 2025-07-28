@@ -54,6 +54,7 @@ export default function ImagePicker({ label, name }: Props) {
           className={classes.input}
           ref={imageInput}
           onChange={(event) => handleImageChange(event)}
+          required
         />
         <button className={classes.button} onClick={handleClick} type="button">
           Pick an Image
