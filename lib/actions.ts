@@ -9,7 +9,13 @@ function isInvalidText(text: string | File | null) {
   return !text || text.trim() === "";
 }
 
-export async function shareMeal(formData: FormData) {
+export type ShareMealState = {
+  message: string | null;
+};
+
+export async function shareMeal(prevState: ShareMealState, formData: FormData) {
+  console.log(prevState);
+
   const data = {
     title: formData.get("title"),
     summary: formData.get("summary"),
@@ -31,7 +37,9 @@ export async function shareMeal(formData: FormData) {
     !(data.image instanceof File) ||
     data.image.size === 0
   ) {
-    throw new Error("invalid input");
+    return {
+      message: "invalid inputs.",
+    };
   }
 
   await saveMeal(data as MealType);
