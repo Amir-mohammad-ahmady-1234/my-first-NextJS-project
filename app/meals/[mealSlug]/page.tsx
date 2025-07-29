@@ -15,7 +15,13 @@ const MealDetailsPage = ({ params }: { params: { mealSlug: string } }) => {
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          <Image
+            src={
+              typeof meal.image === "string" ? meal.image : "/image/pizza.png"
+            }
+            alt={meal.title}
+            fill
+          />
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
