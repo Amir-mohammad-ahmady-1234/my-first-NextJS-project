@@ -4,6 +4,23 @@ import { getMeal } from "@/lib/meals";
 import { MealType } from "@/types/mealType";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ mealSlug: string }>;
+}) {
+  const { mealSlug } = await params;
+
+  const meal = (await getMeal(mealSlug)) as MealType;
+
+  if (!meal) return notFound();
+
+  return {
+    title: meal.slug,
+    description: meal.summary,
+  };
+}
+
 async function MealDetailsPage({
   params,
 }: {

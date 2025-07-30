@@ -44,6 +44,6 @@ export async function shareMeal(prevState: ShareMealState, formData: FormData) {
   }
 
   await saveMeal(data as MealType);
-  revalidatePath("/meals", "layout");
+  revalidatePath("/meals");
   redirect("/meals");
 }
