@@ -4,8 +4,14 @@ import { getMeal } from "@/lib/meals";
 import { MealType } from "@/types/mealType";
 import { notFound } from "next/navigation";
 
-const MealDetailsPage = ({ params }: { params: { mealSlug: string } }) => {
-  const meal = getMeal(params.mealSlug) as MealType;
+async function MealDetailsPage({
+  params,
+}: {
+  params: Promise<{ mealSlug: string }>;
+}) {
+  const { mealSlug } = await params;
+
+  const meal = (await getMeal(mealSlug)) as MealType;
 
   if (!meal) notFound();
 
@@ -39,6 +45,6 @@ const MealDetailsPage = ({ params }: { params: { mealSlug: string } }) => {
       </main>
     </>
   );
-};
+}
 
 export default MealDetailsPage;

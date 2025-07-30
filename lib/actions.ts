@@ -3,6 +3,7 @@
 import { MealType } from "@/types/mealType";
 import { saveMeal } from "./meals";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 function isInvalidText(text: string | File | null) {
   if (typeof text !== "string") return;
@@ -43,5 +44,6 @@ export async function shareMeal(prevState: ShareMealState, formData: FormData) {
   }
 
   await saveMeal(data as MealType);
+  revalidatePath("/meals", "layout");
   redirect("/meals");
 }
