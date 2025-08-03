@@ -170,5 +170,3 @@ nextlevel-food/
 3. تغییرات خود را commit کنید (`git commit -m 'Add amazing feature'`)
 4. به شاخه اصلی push کنید (`git push origin feature/amazing-feature`)
 5. یک Pull Request ایجاد کنید
-
-⭐ اگر این پروژه برای شما مفید بود، لطفاً آن را ستاره‌دار کنید!
